@@ -1,0 +1,49 @@
+#cursor {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 9999;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	mix-blend-mode: exclusion;
+	pointer-events: none;
+	transition: width 0.2s, height 0.2s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&.small {
+		width: 30px;
+		height: 30px;
+
+		#cursorText {
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+
+	&.invert {
+		width: 20px;
+		height: 20px;
+
+		#cursorText {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		&.small {
+			width: 70px;
+			height: 70px;
+		}
+	}
+
+	#cursorText {
+		font-size: 1.2rem;
+		font-weight: 500;
+		color: black;
+		transition-duration: 0.2s;
+		text-transform: uppercase;
+	}
+}

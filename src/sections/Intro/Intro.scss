@@ -1,0 +1,57 @@
+#intro {
+	position: relative;
+	min-height: 100vh;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.scroll {
+		position: absolute;
+		right: 70px;
+		bottom: 100px;
+		transform: rotate(-90deg);
+		font-weight: 600;
+
+		.wrapper {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			padding: 5rem;
+		}
+	}
+
+	h2 {
+		text-align: center;
+		font-size: 2.6rem;
+		font-weight: 300;
+		margin-bottom: 2rem;
+	}
+
+	h1 {
+		font-size: 10rem;
+		font-weight: 600;
+		text-align: center;
+		line-height: 11rem;
+		margin-bottom: 5rem;
+
+		.animated {
+			display: flex;
+			justify-content: center;
+			span {
+				display: block;
+			}
+		}
+	}
+
+	.showreel {
+		text-align: center;
+		button {
+			padding: 1rem 3rem;
+			background-color: black;
+			color: white;
+			border-radius: 10rem;
+			font-weight: 500;
+		}
+	}
+}

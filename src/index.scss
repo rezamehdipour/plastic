@@ -1,0 +1,99 @@
+// ————— Mixin(s) —————
+@mixin xsmall {
+	@media (max-width: 575px) {
+		@content;
+	}
+}
+@mixin small {
+	@media (min-width: 576px) /* and (max-width: 767px) */ {
+		@content;
+	}
+}
+@mixin medium {
+	@media (min-width: 768px) /* and (max-width: 991px) */ {
+		@content;
+	}
+}
+@mixin large {
+	@media (min-width: 992px) {
+		@content;
+	}
+}
+@mixin xlarge {
+	@media (min-width: 1140px) {
+		@content;
+	}
+}
+@mixin xxlarge {
+	@media (min-width: 1320px) {
+		@content;
+	}
+}
+
+// ————— Container —————
+.container {
+	width: calc(100% - 24px);
+	margin-left: auto;
+	margin-right: auto;
+
+	@include small() {
+		width: 540px;
+	}
+
+	@include medium() {
+		width: 720px;
+	}
+
+	@include large() {
+		width: 960px;
+	}
+
+	@include xlarge() {
+		width: 1140px;
+	}
+
+	@include xxlarge() {
+		width: 1320px;
+	}
+}
+
+// ————— Actual CSS —————
+:root {
+	--font-family: "Poppins", sans-serif;
+
+	--text-primary: #000000;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+	font-family: var(--font-family);
+	cursor: none;
+}
+
+body {
+	position: relative;
+	font-size: 1.6rem;
+
+	font-family: var(--font-family);
+	color: var(--text-primary);
+
+	overflow-x: hidden;
+	background-color: white;
+}
+
+img {
+	display: block;
+}
+
+a {
+	display: block;
+}
+
+svg {
+	display: block;
+}

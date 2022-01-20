@@ -1,0 +1,50 @@
+#navbarButton {
+	position: fixed;
+	z-index: 99;
+	top: 70px;
+	right: 100px;
+
+	button {
+		padding: 5rem;
+		transition-duration: 0.2s;
+		.lines {
+			position: relative;
+			width: 24px;
+			height: 10px;
+			&.active {
+				span {
+					background-color: white;
+					&:first-child {
+						top: 50%;
+						left: 50%;
+						width: 100%;
+						transform: translateY(-50%) translateX(-50%) rotate(45deg);
+					}
+					&:last-child {
+						bottom: 50%;
+						left: 50%;
+						width: 100%;
+						transform: translateY(50%) translateX(-50%) rotate(-45deg);
+					}
+				}
+			}
+			span {
+				position: absolute;
+				display: block;
+				background-color: black;
+				height: 2px;
+				transition-duration: 0.2s;
+				&:first-child {
+					top: 0;
+					left: 0px;
+					width: 100%;
+				}
+				&:last-child {
+					bottom: 0;
+					left: 0px;
+					width: 70%;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,16 @@
+#logo {
+	position: fixed;
+	top: 70px;
+	z-index: 99;
+	transform: rotate(-90deg);
+	transform-origin: center center;
+	&.white {
+		color: white;
+	}
+
+	h1 {
+		font-size: 2.4rem;
+		transition-duration: 0.2s;
+		padding: 5rem;
+	}
+}
