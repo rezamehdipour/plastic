@@ -4,19 +4,15 @@ import { useEffect, useState, useRef } from "react";
 import { makeCursorSmall, makeCursorNormal } from "../../helper/MouseHelper";
 import { makeMagnet, destroyMagnet } from "../../helper/MouseHelper";
 
-// React Icons
+// Libraries
 import { BsArrowLeft } from "react-icons/bs";
-
-// UUID
 import { v4 as uuidv4 } from "uuid";
-
-// Framer Motion
 import { motion, AnimatePresence } from "framer-motion";
 
 // CSS
 import "./Intro.scss";
 
-const animatedLetters = [
+const introAnimatedLetters = [
 	// Digital-first brands.
 	["d", "i", "g", "i", "t", "a", "l", "-", "f", "i", "r", "s", "t", " ", "b", "r", "a", "n", "d", "s", "."],
 	// Digital products.
@@ -27,19 +23,21 @@ const animatedLetters = [
 
 const Intro = (props) => {
 	const [isAnimating, setIsAnimating] = useState(false);
-	const currentAnimatedLettersIndex = useRef(0);
-	const handleChangecurrentAnimatedLettersIndex = () => {
+	const animatedLettersIndex = useRef(0);
+	const handleChangeAnimatedLettersIndex = () => {
 		setIsAnimating(true);
-		if (currentAnimatedLettersIndex.current === animatedLetters.length - 1) {
-			currentAnimatedLettersIndex.current = 0;
+		if (animatedLettersIndex.current === introAnimatedLetters.length - 1) {
+			animatedLettersIndex.current = 0;
 		} else {
-			currentAnimatedLettersIndex.current += 1;
+			animatedLettersIndex.current += 1;
 		}
 		setIsAnimating(false);
 	};
+
+	// componentDidMount
 	useEffect(() => {
 		const changeAnimatedLettersInterval = setInterval(() => {
-			handleChangecurrentAnimatedLettersIndex();
+			handleChangeAnimatedLettersIndex();
 		}, 4000);
 
 		// componentWillUnmount
@@ -76,7 +74,7 @@ const Intro = (props) => {
 										key={uuidv4()}
 										exit={{ opacity: 0, y: -5, transition: { duration: 0.5 } }}
 									>
-										{animatedLetters[currentAnimatedLettersIndex.current].map(
+										{introAnimatedLetters[animatedLettersIndex.current].map(
 											(letter, index) => (
 												<motion.span
 													key={uuidv4()}

@@ -1,0 +1,60 @@
+#works {
+	height: 100vh;
+	background-color: black;
+	color: white;
+	display: flex;
+	align-items: center;
+
+	.container {
+		height: 90%;
+		display: grid;
+		grid-template-rows: 1fr min-content;
+
+		.content {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			.center {
+				&:hover {
+					.icon {
+						svg {
+							opacity: 1;
+							transform: rotate(45deg);
+						}
+					}
+				}
+				h6 {
+					font-size: 10rem;
+					margin-bottom: 3rem;
+				}
+
+				.icon {
+					display: flex;
+					justify-content: center;
+					font-size: 10rem;
+
+					svg {
+						transform-origin: right center;
+						transition-duration: 0.3s;
+						opacity: 0;
+					}
+				}
+			}
+		}
+
+		.footer {
+			display: flex;
+			justify-content: space-between;
+			font-weight: 300;
+			.copyright {
+			}
+
+			.menu {
+				display: flex;
+				.dot {
+					margin: 0 1.5rem;
+				}
+			}
+		}
+	}
+}

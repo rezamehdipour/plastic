@@ -1,8 +1,19 @@
 #letsTalk {
+	display: block;
 	position: fixed;
-	bottom: 100px;
+	bottom: 70px;
+	z-index: 9;
 	transform: rotate(-90deg);
 	transform-origin: center center;
+	&.white {
+		color: white;
+		.wrapper {
+			.icon {
+				background-color: white;
+				color: black;
+			}
+		}
+	}
 
 	.wrapper {
 		display: flex;

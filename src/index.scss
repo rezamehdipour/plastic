@@ -66,6 +66,7 @@
 
 html {
 	font-size: 62.5%;
+	scroll-behavior: smooth;
 }
 
 *,
@@ -84,6 +85,8 @@ body {
 
 	overflow-x: hidden;
 	background-color: white;
+
+	overflow: hidden;
 }
 
 img {

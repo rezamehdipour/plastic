@@ -1,5 +1,8 @@
 import { useRef } from "react";
 
+// Redux
+import { useSelector } from "react-redux";
+
 // Helper
 import { makeCursorSmall, makeCursorNormal } from "../../helper/MouseHelper";
 import { makeMagnet, destroyMagnet } from "../../helper/MouseHelper";
@@ -11,10 +14,17 @@ import { BsFillChatRightTextFill } from "react-icons/bs";
 import "./Talk.scss";
 
 const Talk = (props) => {
+	const step = useSelector((s) => s.step);
 	const element = useRef();
 
 	return (
-		<div id="letsTalk" onMouseEnter={makeCursorSmall} onMouseLeave={makeCursorNormal}>
+		<a
+			href="/"
+			id="letsTalk"
+			className={`${step === 6 ? "white" : ""}`}
+			onMouseEnter={makeCursorSmall}
+			onMouseLeave={makeCursorNormal}
+		>
 			<div
 				className="wrapper"
 				ref={element}
@@ -26,7 +36,7 @@ const Talk = (props) => {
 				</div>
 				<h6>Lets talk</h6>
 			</div>
-		</div>
+		</a>
 	);
 };
 

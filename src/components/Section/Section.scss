@@ -12,6 +12,7 @@
 
 		.rectangle {
 			position: relative;
+			z-index: 1;
 			height: 100%;
 			background-size: cover;
 			background-position: center;
@@ -20,7 +21,6 @@
 
 			.title {
 				position: absolute;
-				z-index: 1;
 				top: 50%;
 				left: calc(100% - 25px);
 				transform: translateY(-50%);

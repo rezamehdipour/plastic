@@ -12,13 +12,14 @@ import "./Logo.scss";
 
 const Logo = (props) => {
 	const navbar = useSelector((s) => s.navbar);
+	const step = useSelector((s) => s.step);
 	const element = useRef();
 
 	return (
 		<a
 			href="/"
 			id="logo"
-			className={`${navbar ? "white" : ""}`}
+			className={`${navbar ? "white" : ""} ${step === 6 ? "white" : ""}`}
 			onMouseEnter={makeCursorSmall}
 			onMouseLeave={makeCursorNormal}
 		>
