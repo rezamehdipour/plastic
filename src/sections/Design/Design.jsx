@@ -5,7 +5,7 @@ import Section from "../../components/Section/Section";
 import SectionDesignPalette from "../../images/section-design-palette.svg";
 import SectionDesignImage from "../../images/section-design-image.png";
 
-const Design = (props) => {
+const Design = ({ invisible }) => {
 	return (
 		<Section
 			palette={SectionDesignPalette}
@@ -14,6 +14,7 @@ const Design = (props) => {
 			halfCircleColor="#FFEEB5"
 			subtitle={["iPad Application", "Worlwide"]}
 			title={["Desigual", "Look Book"]}
+			invisible={invisible}
 		/>
 	);
 };

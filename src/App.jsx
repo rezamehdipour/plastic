@@ -29,16 +29,23 @@ import Works from "./sections/Works/Works";
 const App = (props) => {
 	const dispatch = useDispatch();
 	const step = useSelector((s) => s.step);
+	const isStepping = useRef(false);
 	const prevStep = usePrevious(step);
 	const handleSteps = (wheelEvent) => {
-		const wheel = wheelEvent.wheelDelta;
-		// previous
-		if (wheel > 0) {
-			dispatch(decreaseStep());
-		}
-		// next
-		else {
-			dispatch(increaseStep());
+		if (isStepping.current === false) {
+			isStepping.current = true;
+			const wheel = wheelEvent.wheelDelta;
+			// previous
+			if (wheel > 0) {
+				dispatch(decreaseStep());
+			}
+			// next
+			else {
+				dispatch(increaseStep());
+			}
+			setTimeout(() => {
+				isStepping.current = false;
+			}, 1000);
 		}
 	};
 
@@ -77,7 +84,8 @@ const App = (props) => {
 			{/* ——— Sections ——— */}
 			<Intro />
 			<AnimatePresence>
-				{step < 2 && <Design key={uuidv4()} />}
+				{step === 0 && <Design key={uuidv4()} invisible />}
+				{step === 1 && <Design key={uuidv4()} />}
 				{step === 2 && <Iota key={uuidv4()} />}
 				{step === 3 && <Hitachi key={uuidv4()} />}
 				{step === 4 && <Strabe key={uuidv4()} />}

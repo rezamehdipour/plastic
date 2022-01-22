@@ -11,9 +11,21 @@ import HalfCircle from "../../svg/HalfCircle";
 // CSS
 import "./Section.scss";
 
-const Section = ({ palette, image, halfCircleRotate, halfCircleColor, subtitle, title }) => {
+const Section = ({
+	palette,
+	image,
+	halfCircleRotate,
+	halfCircleColor,
+	subtitle,
+	title,
+	invisible = false,
+}) => {
 	return (
-		<motion.section className="section" exit={{ opacity: 0 }}>
+		<motion.section
+			className="section"
+			initial={{ opacity: `${invisible ? 0 : 1}` }}
+			exit={{ opacity: 0 }}
+		>
 			<div className="container">
 				<motion.div
 					className="rectangle"
