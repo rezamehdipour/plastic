@@ -2,6 +2,6 @@
 
 React 17, Hooks, Framer-motion, Scss.
 
-## Preview
+<a href="https://rezamehdipour.ir/plastic">[ Live Preview ]</a>
 
-![preview](preview.png)
+![preview](preview.jpg)

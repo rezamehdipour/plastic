@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import useUpdateEffect from "./hooks/useUpdateEffect";
 import usePrevious from "./hooks/usePrevious";
 
